@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Olympic Triathlon — 43 Week Program · Race Jul 10 2027</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#151D24">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tri Program">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" href="./icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --swim:#1585B3; --bike:#C77E0A; --run:#C43D33; --lift:#6B5FC7; --core:#2F8F5E; --rest:#8B949B; --mob:#8B949B;
+  --ink:#151D24; --ink-2:#414E58; --ink-3:#6C7A84;
+  --paper:#F3F5F4; --card:#FFFFFF; --line:#D6DCDA; --shade:#EDF1F0;
+  --ok:#2E7D5B;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px 90px}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--swim);outline-offset:2px}
+button{font:inherit;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--paper);margin:0 -18px 0;padding:36px 18px 28px}
+.hero .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:#8FA3AE;margin:0 0 10px}
+.hero h1{font-family:"Barlow Condensed",sans-serif;font-weight:700;
+  font-size:clamp(38px,11vw,64px);line-height:.94;letter-spacing:-.01em;
+  text-transform:uppercase;margin:0 0 8px}
+.hero .sub{color:#B4C2CA;font-size:14.5px;margin:0 0 22px;max-width:46ch}
+.course{display:flex;height:54px;border-radius:3px;overflow:hidden;margin-bottom:10px}
+.leg{display:flex;flex-direction:column;justify-content:center;padding:0 12px;color:#fff}
+.leg.s{background:var(--swim);flex:1.5}.leg.b{background:var(--bike);flex:5.2}.leg.r{background:var(--run);flex:2.6}
+.leg .d{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:19px;line-height:1}
+.leg .l{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.88;margin-top:3px}
+.hero .foot{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#8FA3AE;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.countdown{display:flex;gap:14px;align-items:baseline;margin:0 0 18px}
+.countdown b{font-family:"Barlow Condensed",sans-serif;font-size:44px;line-height:1;font-weight:700}
+.countdown span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FA3AE}
+
+/* ---------- sticky nav ---------- */
+.nav{position:sticky;top:0;z-index:40;background:var(--ink);margin:0 -18px 30px;
+  border-top:1px solid #2A343C;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-inner{display:flex;gap:0;max-width:820px;margin:0 auto;padding:0 10px;min-width:max-content}
+.nav a{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:#8FA3AE;text-decoration:none;padding:12px 10px;white-space:nowrap;
+  border-bottom:2px solid transparent}
+.nav a:hover,.nav a:focus{color:#fff}
+.nav a.on{color:#fff;border-bottom-color:var(--bike)}
+
+/* ---------- generic ---------- */
+h2{font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:27px;letter-spacing:.01em;margin:52px 0 4px;line-height:1.05}
+h2 .num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);
+  letter-spacing:.14em;display:block;margin-bottom:5px;font-weight:500}
+h2 + .deck{color:var(--ink-2);font-size:14.5px;margin:0 0 18px;max-width:60ch}
+h3{font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;
+  font-size:17px;letter-spacing:.04em;margin:22px 0 8px}
+p{margin:0 0 12px}
+.rule{height:2px;background:var(--ink);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px;margin:0 0 14px}
+.mono{font-family:"IBM Plex Mono",monospace}
+.small{font-size:13px;color:var(--ink-2)}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3)}
+.btn{background:var(--ink);color:#fff;border:0;border-radius:4px;padding:9px 14px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink-3)}
+.btn.sm{padding:5px 9px;font-size:10px}
+
+/* ---------- today ---------- */
+.today{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--bike);border-radius:6px;
+  padding:14px 16px;margin:0 0 18px}
+.today .tag{display:block;margin-bottom:4px}
+.today .t{font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;font-size:24px;line-height:1.05}
+.today .m{font-size:13.5px;color:var(--ink-2);margin:4px 0 10px}
+.today ul{margin:0;padding:0;list-style:none}
+.today li{display:flex;align-items:center;gap:9px;font-size:14px;padding:5px 0;border-top:1px dotted var(--line)}
+.today li .dcap{flex:0 0 auto}
+.today li.done{color:var(--ink-3);text-decoration:line-through}
+.today li .dur{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
+
+/* ---------- checklist ---------- */
+.task{background:var(--card);border:1px solid var(--line);border-radius:6px;margin:0 0 10px;
+  display:flex;gap:0;align-items:stretch;overflow:hidden}
+.task .box{flex:0 0 46px;border-right:1px solid var(--line);background:var(--shade);
+  display:flex;align-items:center;justify-content:center}
+.task .body{padding:13px 15px}
+.task h3{margin:0 0 4px;font-size:16px}
+.task p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.task .due{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--run);margin-top:6px;display:block}
+.task.done .body h3{text-decoration:line-through;color:var(--ink-3)}
+.chk{appearance:none;width:22px;height:22px;border:2px solid var(--ink-3);border-radius:3px;
+  background:#fff;display:block;position:relative;cursor:pointer;flex:0 0 auto;margin:0}
+.chk:checked{background:var(--ok);border-color:var(--ok)}
+.chk:checked::after{content:"";position:absolute;left:6px;top:1px;width:5px;height:12px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(42deg)}
+
+/* ---------- RPE ---------- */
+.rpe{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:14px}
+.rpe-row{display:flex;gap:0;border-bottom:1px solid var(--line)}
+.rpe-row:last-child{border-bottom:0}
+.rpe-n{flex:0 0 74px;background:var(--shade);padding:12px 8px;text-align:center;border-right:1px solid var(--line)}
+.rpe-n b{font-family:"Barlow Condensed",sans-serif;font-size:22px;display:block;line-height:1}
+.rpe-n span{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.12em;color:var(--ink-3)}
+.rpe-d{padding:11px 14px}
+.rpe-d h4{margin:0 0 3px;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:16px;letter-spacing:.03em;font-weight:600}
+.rpe-d p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.rpe-d .use{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);margin-top:5px;display:block}
+
+/* ---------- week explorer ---------- */
+.explorer{background:var(--ink);color:var(--paper);border-radius:8px;overflow:hidden;margin-bottom:16px}
+.wk-bar{display:flex;align-items:center;gap:10px;padding:13px 14px;border-bottom:1px solid #2A343C}
+.wk-btn{background:#232E36;color:#fff;border:1px solid #37424B;border-radius:4px;width:40px;height:40px;font-size:19px;line-height:1;flex:0 0 auto}
+.wk-btn:hover{background:#2E3A43}
+.wk-btn[disabled]{opacity:.3;cursor:default}
+.wk-title{flex:1;min-width:0;text-align:center}
+.wk-title .n{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:25px;text-transform:uppercase;line-height:1.05;display:block}
+.wk-title .d{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#8FA3AE;letter-spacing:.08em}
+.wk-meta{display:flex;flex-wrap:wrap;gap:7px;padding:12px 14px;background:#1C262E}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 9px;border-radius:3px;background:#2B363E;color:#B4C2CA}
+.pill.hot{background:var(--bike);color:#231a05}
+.pill.test{background:var(--swim);color:#fff}
+.pill.rec{background:#3C4750;color:#C9D4DA}
+.pill.race{background:var(--run);color:#fff}
+.wk-note{padding:0 14px 13px;background:#1C262E;font-size:13.5px;color:#C4D0D7;margin:0}
+.wk-scroll{padding:8px 8px 4px;overflow-x:auto;display:flex;gap:6px;background:#1C262E;border-top:1px solid #2A343C}
+.dot{flex:0 0 auto;width:30px;height:30px;border-radius:4px;border:1px solid #37424B;background:#232E36;
+  color:#8FA3AE;font-family:"IBM Plex Mono",monospace;font-size:11px}
+.dot.on{background:var(--bike);color:#231a05;border-color:var(--bike);font-weight:600}
+.dot.rc{border-color:#5A666E;color:#5F6E78}
+.dot.done{border-color:var(--ok);color:#7FCBA5}
+.dot.part{border-color:#7FCBA5}
+
+.days{margin:0 0 8px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:6px;margin-bottom:9px;overflow:hidden}
+.day.today-day{border-color:var(--bike);box-shadow:0 0 0 1px var(--bike)}
+.day-head{display:flex;align-items:center;gap:11px;padding:11px 13px}
+.dow{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);flex:0 0 46px;line-height:1.3}
+.dow small{display:block;letter-spacing:.05em;color:var(--ink-3);text-transform:none;font-size:10px}
+.day-sum{flex:1;min-width:0}
+.day-sum .t{font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;font-size:17px;letter-spacing:.03em;line-height:1.15}
+.day-sum .m{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
+.day.done .day-sum .t{color:var(--ok)}
+.sess{border-top:1px solid var(--line);padding:12px 13px 13px;display:flex;gap:11px}
+.sess.done{background:#F6FAF8}
+.sess.done h4{color:var(--ink-3);text-decoration:line-through}
+.bar{flex:0 0 4px;border-radius:2px}
+.bar.s{background:var(--swim)}.bar.b{background:var(--bike)}.bar.r{background:var(--run)}
+.bar.l{background:var(--lift)}.bar.c{background:var(--core)}.bar.x,.bar.m{background:var(--rest)}
+.sess-body{flex:1;min-width:0}
+.sess-body .top{display:flex;gap:10px;align-items:flex-start;margin-bottom:6px}
+.sess-body h4{margin:0;font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;font-size:16px;letter-spacing:.03em;flex:1}
+.sess-body .dur{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);white-space:nowrap;padding-top:3px}
+.sess-body ol{margin:0;padding-left:17px;font-size:13.5px;color:var(--ink-2)}
+.sess-body ol li{margin-bottom:3px}
+.sess-body .why{font-size:12.5px;color:var(--ink-3);margin:8px 0 0;padding-left:10px;border-left:2px solid var(--line)}
+.sess-body .opt{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.sess-foot{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.logged{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ok);background:#E4F0EA;padding:4px 8px;border-radius:3px}
+.rest-day{padding:14px 13px;font-size:13.5px;color:var(--ink-3)}
+.banner{border-left:4px solid var(--run);background:#FBF1EF;padding:11px 13px;border-radius:4px;font-size:13.5px;margin:0 0 10px}
+.banner b{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:15px}
+.progress{display:flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);margin:0 0 16px}
+.pbar{flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--ok);width:0}
+.linkbtn{background:none;border:0;color:var(--ink-3);text-decoration:underline;font-size:11.5px;padding:0}
+.savestate{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px;white-space:nowrap}
+.savestate.ok{background:#E4F0EA;color:var(--ok)}
+.savestate.warn{background:#FBF1E3;color:#8A5A12}
+.progress-actions{display:flex;gap:16px;flex-wrap:wrap;margin:-6px 0 18px}
+
+/* ---------- stat tiles & charts ---------- */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 16px}
+@media(min-width:560px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.tile .l{font-size:12px;color:var(--ink-3);margin:0 0 4px}
+.tile .v{font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;font-size:26px;line-height:1.1}
+.tile .s{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);margin-top:3px}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 14px 10px;margin:0 0 14px;position:relative}
+.chart h3{margin:0 0 2px;font-size:18px}
+.chart .sub{font-size:12.5px;color:var(--ink-3);margin:0 0 10px}
+.chart .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart svg{display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--ink-2);margin:8px 0 0}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend i.track{background:var(--line)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-size:12px;line-height:1.4;
+  padding:7px 9px;border-radius:4px;white-space:nowrap;z-index:5;display:none;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.tip b{font-family:"IBM Plex Mono",monospace;font-weight:500;display:block;color:#B4C2CA;font-size:10.5px;margin-bottom:2px}
+.axis text{font-family:"IBM Plex Mono",monospace;font-size:10px;fill:var(--ink-3)}
+.grid line{stroke:var(--line);stroke-width:1}
+.empty{font-size:13px;color:var(--ink-3);padding:18px 0;text-align:center}
+
+/* ---------- calculator ---------- */
+.calc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:15px;margin-bottom:14px}
+.calc .fields{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.field{flex:1 1 150px}
+.field label{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:4px;
+  font-family:"IBM Plex Mono",monospace;font-size:15px;background:var(--paper);color:var(--ink)}
+.field textarea{font-family:"IBM Plex Sans",system-ui,sans-serif;min-height:64px;resize:vertical}
+.out{background:var(--shade);border-radius:4px;padding:12px 13px}
+.out div{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:4px 0;border-bottom:1px dotted var(--line)}
+.out div:last-child{border-bottom:0}
+.out b{font-family:"IBM Plex Mono",monospace;font-weight:600}
+.out .hi b{color:var(--run)}
+
+/* ---------- phases ---------- */
+.phase{background:var(--card);border:1px solid var(--line);border-radius:6px;margin:0 0 16px;overflow:hidden}
+.phase-head{padding:15px 16px 14px;border-bottom:1px solid var(--line)}
+.phase-head h3{margin:4px 0 2px;font-size:23px;letter-spacing:.01em}
+.phase-head .aim{font-size:14px;color:var(--ink-2);margin:6px 0 0}
+.hours{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-2);margin-top:8px}
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:14px 10px;background:var(--shade)}
+.sday{min-width:0}
+.sday .h{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:center;margin-bottom:4px}
+.chip{border-radius:3px;color:#fff;padding:6px 3px;margin-bottom:3px;text-align:center;min-height:50px;display:flex;flex-direction:column;justify-content:center}
+.chip .n{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;line-height:1.05}
+.chip .t{font-family:"IBM Plex Mono",monospace;font-size:9.5px;opacity:.9;margin-top:2px}
+.c-s{background:var(--swim)}.c-b{background:var(--bike)}.c-r{background:var(--run)}
+.c-l{background:var(--lift)}.c-c{background:var(--core)}.c-x{background:transparent;border:1px dashed var(--rest);color:var(--rest)}
+.detail{padding:14px 16px 18px}
+.detail ul{margin:0;padding-left:18px;font-size:14px}
+.detail li{margin-bottom:7px}
+
+/* ---------- accordion ---------- */
+details.acc{background:var(--card);border:1px solid var(--line);border-radius:6px;margin-bottom:8px;overflow:hidden}
+details.acc summary{padding:13px 15px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary .caret{margin-left:auto;color:var(--ink-3);font-size:13px;transition:transform .18s}
+details.acc[open] summary .caret{transform:rotate(90deg)}
+details.acc summary h3{margin:0;font-size:18px}
+details.acc summary .sub{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:2px}
+.acc-body{padding:0 15px 16px;border-top:1px solid var(--line);padding-top:13px}
+.acc-body h4{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:16px;letter-spacing:.03em;margin:14px 0 4px;font-weight:600}
+.acc-body h4:first-child{margin-top:0}
+.acc-body p{font-size:14px;color:var(--ink-2);margin:0 0 8px}
+.acc-body .check{font-size:12.5px;color:var(--ink-3);border-left:2px solid var(--line);padding-left:9px;margin:0 0 4px}
+.dcap{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:7px;vertical-align:middle}
+
+/* ---------- tables ---------- */
+.tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin-bottom:10px}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:640px}
+table.narrow{min-width:0}
+th{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;padding:9px 8px;text-align:left;font-weight:500;position:sticky;top:0}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.rec td{background:var(--shade);color:var(--ink-2)}
+tr.tst td{background:#E8F1F4}
+tr.big td{background:#FBF1E3}
+tr.now td{box-shadow:inset 3px 0 0 var(--run)}
+td.wk{font-family:"IBM Plex Mono",monospace;font-weight:600}
+td.num{font-family:"IBM Plex Mono",monospace;text-align:right}
+tr.phdr td{background:var(--ink-2);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;padding:6px 8px}
+.race-t td:nth-child(2),.race-t td:nth-child(3){font-family:"IBM Plex Mono",monospace}
+tr.tot td{font-weight:600;background:var(--shade)}
+
+.grid2{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:620px){.grid2{grid-template-columns:1fr 1fr}}
+.cp{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--swim);border-radius:5px;padding:12px 14px;margin-bottom:9px}
+.cp .when{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.cp p{margin:0;font-size:14px}
+.foot-note{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);border-top:2px solid var(--ink);padding-top:14px;margin-top:50px}
+
+/* ---------- log modal ---------- */
+.modal{position:fixed;inset:0;background:rgba(21,29,36,.55);z-index:100;display:none;align-items:flex-end;justify-content:center;padding:0}
+.modal.open{display:flex}
+@media(min-width:620px){.modal{align-items:center;padding:20px}}
+.sheet{background:var(--card);width:100%;max-width:560px;max-height:92vh;overflow-y:auto;border-radius:10px 10px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom))}
+@media(min-width:620px){.sheet{border-radius:8px}}
+.sheet h3{margin:0 0 2px;font-size:21px}
+.sheet .tag{display:block;margin-bottom:12px}
+.sheet .fields{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.sheet .field{flex:1 1 120px}
+.sheet .field.full{flex-basis:100%}
+.lifts{border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-bottom:12px}
+.lift-row{display:grid;grid-template-columns:1fr 78px 60px;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line)}
+.lift-row:last-child{border-bottom:0}
+.lift-row .nm{font-size:13.5px}
+.lift-row .nm small{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3)}
+.lift-row input{width:100%;padding:7px 8px;border:1px solid var(--line);border-radius:4px;font-family:"IBM Plex Mono",monospace;font-size:14px;background:var(--paper)}
+.lift-hd{display:grid;grid-template-columns:1fr 78px 60px;gap:8px;padding:6px 10px;background:var(--shade);font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.sheet .actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:6px}
+.sheet .actions .linkbtn{margin-right:auto}
+
+@media (display-mode:standalone){
+  .hero{padding-top:calc(36px + env(safe-area-inset-top))}
+  .nav{top:env(safe-area-inset-top)}
+  .wrap{padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+}
+@media print{
+  .nav,.wk-scroll,.wk-btn,.chk,.linkbtn,.progress,.btn,.modal{display:none!important}
+  body{background:#fff;font-size:11pt}
+  .explorer{background:#fff;color:#000;border:1px solid #000}
+  .wk-meta,.wk-note{background:#fff;color:#000}
+  .day,.card,.phase{break-inside:avoid}
+  details.acc{border:0}details.acc .acc-body{display:block!important}
+  .hero{background:#fff;color:#000}
+  .hero h1,.hero .sub,.hero .foot{color:#000}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Sep 14 2026 &nbsp;→&nbsp; Sat Jul 10 2027 · 43 weeks</p>
+  <h1>Olympic<br>Triathlon</h1>
+  <p class="sub">A complete program for the all-round athlete: swim, bike, run, two barbell days every week, and core work throughout. Five to seven and a half hours a week, a pool, a bike, and a rack.</p>
+  <div class="countdown"><b id="cdDays">—</b><span>days to race day</span></div>
+  <div class="course">
+    <div class="leg s"><span class="d">1500 m</span><span class="l">Swim</span></div>
+    <div class="leg b"><span class="d">40 km</span><span class="l">Bike</span></div>
+    <div class="leg r"><span class="d">10 km</span><span class="l">Run</span></div>
+  </div>
+  <div class="foot"><span>Realistic first finish · 2:50–3:25</span><span>Lift Mon + Thu · Sundays off</span></div>
+</header>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#thisweek">This week</a>
+    <a href="#progress">Progress</a>
+    <a href="#start">Before you start</a>
+    <a href="#read">How to read it</a>
+    <a href="#paces">Your paces</a>
+    <a href="#phases">Phases</a>
+    <a href="#table">All 43 weeks</a>
+    <a href="#library">Workout library</a>
+    <a href="#raceday">Race day</a>
+    <a href="#checkpoints">Checkpoints</a>
+    <a href="#adjust">If life happens</a>
+  </div>
+</nav>
+
+<!-- ============ WEEK EXPLORER ============ -->
+<section id="thisweek">
+  <h2><span class="num">01 / Daily plan</span>This week</h2>
+  <p class="deck">Every session of all 43 weeks, written out in full. Tick each session off as you do it, and tap <b>Log</b> to record what actually happened — time, distance, effort, and the weight on the bar.</p>
+  <div class="rule"></div>
+
+  <div class="today" id="today"></div>
+
+  <div class="progress">
+    <span id="pTxt">0 of 43 weeks logged</span>
+    <span class="pbar"><i id="pBar"></i></span>
+    <span class="savestate" id="saveState">…</span>
+  </div>
+  <div class="progress-actions">
+    <button class="linkbtn" id="backup">Back up to a file</button>
+    <button class="linkbtn" id="restore">Restore</button>
+    <button class="linkbtn" id="reset">Clear all</button>
+    <input type="file" id="restoreFile" accept="application/json,.json" hidden>
+  </div>
+
+  <div class="explorer">
+    <div class="wk-bar">
+      <button class="wk-btn" id="prev" aria-label="Previous week">‹</button>
+      <div class="wk-title">
+        <span class="n" id="wkN">Week 1</span>
+        <span class="d" id="wkD">Sep 14</span>
+      </div>
+      <button class="wk-btn" id="next" aria-label="Next week">›</button>
+    </div>
+    <div class="wk-meta" id="wkMeta"></div>
+    <p class="wk-note" id="wkNote"></p>
+    <div class="wk-scroll" id="wkDots"></div>
+  </div>
+
+  <div id="wkBanner"></div>
+  <div class="days" id="days"></div>
+  <p class="small mono" id="wkTotal"></p>
+</section>
+
+<!-- ============ PROGRESS ============ -->
+<section id="progress">
+  <h2><span class="num">02 / Tracking</span>Progress</h2>
+  <p class="deck">What you've actually done, drawn from the sessions you tick off and log. Every chart here has a table underneath it if you'd rather read the numbers.</p>
+  <div class="rule"></div>
+  <div class="tiles" id="tiles"></div>
+
+  <div class="chart" id="volChart">
+    <h3>Training time, week by week</h3>
+    <p class="sub">Minutes completed, by discipline. The grey track behind each column is what the plan asked for.</p>
+    <div class="scroll" id="volSvg"></div>
+    <div class="legend" id="volLegend"></div>
+    <div class="tip" id="volTip"></div>
+  </div>
+
+  <div class="chart" id="liftChart">
+    <h3>Strength</h3>
+    <p class="sub">Heaviest logged working set for the four main lifts, by week. Log a lift session with weights to add points.</p>
+    <div class="scroll" id="liftSvg"></div>
+    <div class="legend" id="liftLegend"></div>
+    <div class="tip" id="liftTip"></div>
+  </div>
+
+  <h3>Time trials</h3>
+  <p class="small">Every test result you've logged. The most recent swim and run feed the pace calculator automatically.</p>
+  <div class="tscroll"><table class="narrow" id="ttTable"><thead><tr><th>Week</th><th>Test</th><th>Result</th><th>Pace</th></tr></thead><tbody></tbody></table></div>
+
+  <details class="acc"><summary><div><h3>Weekly numbers</h3><span class="sub">The chart above as a table</span></div><span class="caret">›</span></summary>
+    <div class="acc-body"><div class="tscroll"><table id="volTable"><thead><tr><th>Wk</th><th>Week of</th><th>Planned</th><th>Done</th><th>Sessions</th><th>Swim</th><th>Bike</th><th>Run</th><th>Barbell</th><th>Core</th></tr></thead><tbody></tbody></table></div></div>
+  </details>
+</section>
+
+<!-- ============ BEFORE YOU START ============ -->
+<section id="start">
+  <h2><span class="num">03 / Setup</span>Before you start</h2>
+  <p class="deck">Five things that decide whether this program works, none of which are workouts. Tick them off as you go.</p>
+  <div class="rule"></div>
+  <div id="tasks"></div>
+
+  <div class="card">
+    <h3>How every week is shaped</h3>
+    <p class="small">Six training days, Sunday always off (an optional 15-minute mobility session is listed, and it doesn't count). Two full-body barbell sessions every single week — Monday and Thursday, never the day before Saturday. Core work sits on both lift days, on Wednesday, and at the end of Friday's run. Around that: three swims, two or three runs, two bikes, and Saturday's anchor — the long ride plus a run straight off the bike.</p>
+    <p class="small" style="margin:0">Every fourth week is a recovery week — Weeks 4, 8, 12, 16, 20, 24, 28, 32 and 36 — where distances shrink by about a third, hard efforts go easy, and each lift drops a set but keeps its weight. Adaptation happens during the easy week, not the hard ones.</p>
+  </div>
+</section>
+
+<!-- ============ HOW TO READ ============ -->
+<section id="read">
+  <h2><span class="num">04 / Language</span>How to read it</h2>
+  <p class="deck">Every workout is written as an effort level plus a set notation. Learn these once and the whole program becomes readable.</p>
+  <div class="rule"></div>
+
+  <h3>The effort scale</h3>
+  <p class="small">This program uses RPE — Rate of Perceived Exertion, a 1–10 self-rating of how hard something feels. No heart-rate monitor needed. The talk test is the check. In the gym, RPE 8 means "two more reps were possible".</p>
+  <div class="rpe" id="rpe"></div>
+
+  <div class="card">
+    <h3>RPE in the water</h3>
+    <p class="small">You can't do a talk test while swimming, so use your breathing. <b>Easy / drills (2–3):</b> breathing every third stroke feels comfortable the whole way. <b>Steady (4–5):</b> every third stroke still works, but you're glad when the wall arrives. <b>Race pace (5–6):</b> by the last quarter of the interval you want to switch to every second stroke. <b>Hard (7):</b> every second stroke from the start.</p>
+    <p class="small" style="margin:0">Drills are always 2–3. If a drill leaves you winded, you're swimming it, not drilling it.</p>
+  </div>
+
+  <div class="card">
+    <h3>Reading a workout line</h3>
+    <p class="small"><b class="mono">4 × 50, 15s rest</b> — swim a 50, rest 15 seconds, repeat until you've done four. That's one set; total distance 200.</p>
+    <p class="small"><b class="mono">6 × 50 as 25 drill / 25 swim</b> — each 50 is split. First half is the drill, second half is normal freestyle.</p>
+    <p class="small"><b class="mono">4 × 6 min at RPE 6–7, 3 min easy</b> — six minutes of work, three minutes spinning easy, four times through. The easy part isn't optional.</p>
+    <p class="small"><b class="mono">Back squat 3 × 5</b> — three working sets of five reps at the same weight, after warm-up sets. <b class="mono">2 × 8 per leg</b> means both legs get eight in each set.</p>
+    <p class="small" style="margin:0">Every session has the same four parts: warm up (always easy) → drills or skill work → the main set → cool down. Short on time? Cut the main set, not the warm-up.</p>
+  </div>
+
+  <div class="card">
+    <h3>Yards vs. meters</h3>
+    <span class="tag">Read this before your first pool session</span>
+    <p class="small" style="margin-top:8px">Nearly every US pool is 25 yards long, and pool workouts here are written in yards. The race is in meters, which are about 9% longer:</p>
+    <p class="small mono">400 m ≈ 450 yd ≈ 18 lengths &nbsp;·&nbsp; 800 m ≈ 875 yd ≈ 35 lengths &nbsp;·&nbsp; 1500 m ≈ 1,650 yd ≈ 66 lengths</p>
+    <p class="small" style="margin:0">These round up on purpose, so a distance you hit in the pool is one you can definitely cover in the lake. If your pool is 25 meters, swim the meter numbers as written.</p>
+  </div>
+</section>
+
+<!-- ============ PACES ============ -->
+<section id="paces">
+  <h2><span class="num">05 / Testing</span>Your paces</h2>
+  <p class="deck">"Goal pace" appears throughout this program. It isn't a guess — it's a number you measure in Weeks 2, 11, 23, 31 and 38. Each test replaces a normal session; it never adds to one.</p>
+  <div class="rule"></div>
+
+  <div class="card">
+    <h3>The three time trials</h3>
+    <p class="small"><b>Swim — 400 yd for time.</b> Warm up 10 min easy, then swim 16 lengths as steadily hard as you can hold. In Week 2 swim 200 yd instead if 400 is out of reach — that's information, not failure.</p>
+    <p class="small"><b>Bike — 20 min for distance.</b> On the trainer: 10 min warm-up, then 20 min at the hardest effort you could hold for exactly that long. Weeks 11, 23 and 38.</p>
+    <p class="small"><b>Run — 5K for time.</b> Flat route, 10 min easy warm-up, then 3.1 miles as hard as you can hold. In Week 2 run one mile instead.</p>
+    <p class="small" style="margin:0">Do the tests on different days. Log each one from its session card and it lands here.</p>
+  </div>
+
+  <h3>Pace calculator</h3>
+  <p class="small">Filled in from your latest logged tests; type over them to experiment.</p>
+  <div class="calc">
+    <div class="fields">
+      <div class="field">
+        <label for="sw">400 yd swim time</label>
+        <input id="sw" type="text" inputmode="numeric" placeholder="10:00" value="10:00">
+      </div>
+      <div class="field">
+        <label for="rn">5K run time</label>
+        <input id="rn" type="text" inputmode="numeric" placeholder="28:00" value="28:00">
+      </div>
+    </div>
+    <div class="out" id="calcOut"></div>
+  </div>
+  <p class="small">Swim race pace is your test pace plus 5–8 seconds per 100 — the race swim should feel <i>easier</i> than the test. Run race pace is your 5K pace plus 45–60 seconds per mile: about 30 seconds for the extra distance, about 20 for the fact that you just rode 25 miles. Bike race effort is RPE 4–5 — a pace you'd bet money you could hold for 90 minutes.</p>
+</section>
+
+<!-- ============ PHASES ============ -->
+<section id="phases">
+  <h2><span class="num">06 / Structure</span>The five phases</h2>
+  <p class="deck">Each phase has a weekly shape you repeat. The strip shows the shape; the week view above gives you the exact numbers for any given week.</p>
+  <div class="rule"></div>
+  <div id="phases"></div>
+</section>
+
+<!-- ============ TABLE ============ -->
+<section id="table">
+  <h2><span class="num">07 / Overview</span>All 43 weeks</h2>
+  <p class="deck">The numbers that change week to week, in one place. Recovery weeks are grey, test weeks blue, and the biggest weeks orange. Tap a row to open that week.</p>
+  <div class="rule"></div>
+  <div class="tscroll">
+    <table id="bigTable"><thead><tr>
+      <th>Wk</th><th>Week of</th><th>Key run</th><th>Long swim</th><th>Sat ride</th><th>Brick</th><th>Barbell</th><th>Hrs</th><th>What's happening</th>
+    </tr></thead><tbody id="tbody"></tbody></table>
+  </div>
+  <p class="small mono">Scroll sideways on a phone. "Key run" is Tuesday. "Hrs" includes everything except the optional Sunday mobility.</p>
+</section>
+
+<!-- ============ LIBRARY ============ -->
+<section id="library">
+  <h2><span class="num">08 / Reference</span>Workout library</h2>
+  <p class="deck">What every named session, drill, lift and core move actually is, and how to do it. Read the swim section before your first pool visit and the barbell section before your first lift.</p>
+  <div class="rule"></div>
+  <div id="lib"></div>
+</section>
+
+<!-- ============ RACE DAY ============ -->
+<section id="raceday">
+  <h2><span class="num">09 / July 10</span>Race day</h2>
+  <p class="deck">Two versions of the same race, so you know what you're aiming at and what an average day looks like.</p>
+  <div class="rule"></div>
+  <div class="tscroll">
+    <table class="race-t"><thead><tr><th>Leg</th><th>Steady day</th><th>Good day</th></tr></thead>
+    <tbody>
+      <tr><td>Swim 1500 m</td><td>38 min · 2:30/100</td><td>32 min · 2:08/100</td></tr>
+      <tr><td>T1</td><td>5 min</td><td>3 min</td></tr>
+      <tr><td>Bike 40 km</td><td>1:36 · 15.5 mph</td><td>1:20 · 18.6 mph</td></tr>
+      <tr><td>T2</td><td>3 min</td><td>2 min</td></tr>
+      <tr><td>Run 10 km</td><td>1:00 · 9:40/mi</td><td>53 min · 8:30/mi</td></tr>
+      <tr class="tot"><td>Total</td><td>3:22</td><td>2:50</td></tr>
+    </tbody></table>
+  </div>
+  <p class="small">Note where the time is: the bike is nearly half the race. Three miles an hour on the bike saves about 16 minutes; 20 seconds per 100 in the pool saves five. Train the swim so it doesn't wreck you, and train the bike because that's where the clock actually lives.</p>
+  <div id="raceLib"></div>
+</section>
+
+<!-- ============ CHECKPOINTS ============ -->
+<section id="checkpoints">
+  <h2><span class="num">10 / Proof</span>Checkpoints</h2>
+  <p class="deck">Nine moments where you find out if it's working. Each asks only for something the preceding weeks trained you to do, and none land on a recovery week.</p>
+  <div class="rule"></div>
+  <div id="cps"></div>
+  <p class="small">If you can't hit one, hold the phase an extra two or three weeks rather than pushing on. Losing three weeks costs you nothing; getting hurt costs you the race.</p>
+</section>
+
+<!-- ============ ADJUST ============ -->
+<section id="adjust">
+  <h2><span class="num">11 / Reality</span>If life happens</h2>
+  <p class="deck">It will — work, travel, a cold. The program survives that if you cut in the right order.</p>
+  <div class="rule"></div>
+  <div class="grid2">
+    <div class="card"><h3 style="margin-top:0">Protect these three</h3>
+      <p class="small" style="margin:0">The Saturday ride and brick, the long swim, and the Tuesday key run. These carry the race. Everything else is negotiable.</p></div>
+    <div class="card"><h3 style="margin-top:0">Cut in this order</h3>
+      <p class="small" style="margin:0">1. Friday easy swim → 2. Monday easy swim → 3. Friday run → 4. Wednesday bike → 5. Thursday barbell → 6. Monday barbell. If you can only lift once, make it Monday.</p></div>
+    <div class="card"><h3 style="margin-top:0">Never double up</h3>
+      <p class="small" style="margin:0">Don't make up a missed session by cramming two in later. A missed workout costs you nothing; two crammed together costs you a week.</p></div>
+    <div class="card"><h3 style="margin-top:0">Back from illness</h3>
+      <p class="small" style="margin:0">Three days off sick? Return at about 60% for two or three sessions before resuming the plan. The weights come back faster than you fear.</p></div>
+    <div class="card"><h3 style="margin-top:0">Pain that changes how you move</h3>
+      <p class="small" style="margin:0">Sharp joint pain means stop and get it looked at, not push through. Ten months is enough runway to lose two weeks and still be fine.</p></div>
+    <div class="card"><h3 style="margin-top:0">Two bad Saturdays running</h3>
+      <p class="small" style="margin:0">Usually under-fuelling, under-sleeping, or a skipped recovery week. Check those three before assuming you're unfit.</p></div>
+  </div>
+  <div class="card" style="border-left:4px solid var(--bike)">
+    <h3 style="margin-top:0">Behind on the table?</h3>
+    <p class="small" style="margin:0">Repeat the week you're on rather than skipping ahead. The numbers are a ladder, not a calendar. The one exception is the taper: whatever week you're on when July 3 arrives, switch to Week 42.</p>
+  </div>
+</section>
+
+<p class="foot-note">
+  v5 · Sep 2026 · Race Sat Jul 10 2027<br>
+  Swim 1500 m · Bike 40 km · Run 10 km · Barbell Mon + Thu · Sundays off · Recovery weeks 4, 8, 12, 16, 20, 24, 28, 32, 36
+</p>
+
+</div>
+
+<!-- ============ LOG MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet">
+    <h3 id="mTitle">Log session</h3>
+    <span class="tag" id="mSub"></span>
+    <div id="mBody"></div>
+    <div class="actions">
+      <button class="linkbtn" id="mDelete">Delete this log</button>
+      <button class="btn ghost" id="mCancel">Cancel</button>
+      <button class="btn" id="mSave">Save &amp; mark done</button>
+    </div>
+  </div>
+</div>
+
+<script src="./plan.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

@@ -27,8 +27,13 @@ record time trials, and watch weekly volume, strength and test results on the Pr
 
 ## Put it on your phone with GitHub Pages
 
-1. In this repo go to **Settings → Pages**, set *Source* to **Deploy from a branch**,
-   pick the branch and the **/ (root)** folder, and save.
+GitHub Pages only works on a **public** repository unless the account is on a paid plan.
+If Settings → Pages shows an upgrade notice instead of a branch picker, first go to
+**Settings → General → Danger Zone → Change visibility → Make public**.
+
+1. In this repo go to **Settings → Pages**. Under *Build and deployment* set *Source* to
+   **Deploy from a branch**, pick the branch that holds the app and the **/ (root)** folder,
+   and save.
 2. After a minute the app is live at `https://<your-username>.github.io/Truathlon-Training/`.
 3. **Android (Chrome):** open the URL → menu (⋮) → **Add to Home screen** → **Install**.
    **iPhone (Safari):** open the URL in Safari → Share → **Add to Home Screen**.
